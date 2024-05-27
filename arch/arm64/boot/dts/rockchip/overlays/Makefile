@@ -18,6 +18,8 @@ ifeq ($(strip $(CONFIG_CPU_RK3588)), y)
 	CONFIG_CLK_RK3588 ?= y
 endif
 
+-include $(src)/Makefile.rk3588-can
+
 dtb-$(CONFIG_CLK_RK3308) += \
 	radxa-s0-ext-antenna.dtbo \
 	rk3308-bs-opp-1008.dtbo \
@@ -133,7 +135,8 @@ dtb-$(CONFIG_CLK_RK3528) += \
 	rk3528-uart3-m1.dtbo \
 	rk3528-uart7-m0.dtbo \
 	rock-2a-eeprom.dtbo \
-	rock-2a-enable-pcie.dtbo
+	rock-2a-enable-pcie.dtbo \
+	rock-2a-poe-hat.dtbo
 
 dtb-$(CONFIG_CLK_RK3568) += \
 	audioinjector-isolated-soundcard.dtbo \
@@ -300,6 +303,7 @@ dtb-$(CONFIG_CPU_RK3568) += \
 	radxa-zero3-radxa-camera-8m.dtbo \
 	radxa-zero3-rpi-camera-v1.3.dtbo \
 	radxa-zero3-rpi-camera-v2.dtbo \
+	radxa-zero3-poe-hat.dtbo \
 	radxa-zero3-disabled-ethernet.dtbo \
 	radxa-zero3-disabled-wireless.dtbo \
 	rock-3a-radxa-display-8hd.dtbo \
@@ -318,6 +322,7 @@ dtb-$(CONFIG_CLK_RK3588) += \
 	radxa-nx5-io-rpi-camera-v2-cam0.dtbo \
 	radxa-nx5-io-rpi-camera-v2-cam1.dtbo \
 	rk3588-disable-fiq-debugger.dtbo \
+	rk3588-disable-sdhci.dtbo \
 	rk3588-dwc3-host.dtbo \
 	rk3588-dwc3-peripheral.dtbo \
 	rk3588-dwc3-otg.dtbo \
@@ -415,6 +420,7 @@ dtb-$(CONFIG_CLK_RK3588) += \
 	rk3588-w1-gpio3-b3.dtbo \
 	rk3588-w1-gpio4-b1.dtbo \
 	rock-5a-allnet-5inch-display.dtbo \
+	rock-5a-i2c7-m3.dtbo \
 	rock-5a-radxa-25w-poe.dtbo \
 	rock-5a-radxa-display-8hd.dtbo \
 	rock-5a-rpi-camera-v2.dtbo \
@@ -428,9 +434,6 @@ dtb-$(CONFIG_CLK_RK3588) += \
 	rock-5b-sata.dtbo
 
 dtb-$(CONFIG_CPU_RK3588) += \
-	rk3588-can1-m0.dtbo \
-	rk3588-can1-m1.dtbo \
-	rk3588-can2-m1.dtbo \
 	radxa-cm5-io-okdo-5mp.dtbo \
 	radxa-cm5-io-radxa-display-8hd.dtbo \
 	radxa-cm5-io-radxa-camera-4k.dtbo \
@@ -450,7 +453,6 @@ dtb-$(CONFIG_CPU_RK3588) += \
 	radxa-cm5-rpi-cm4-io-radxa-camera-8m-219-cam1.dtbo \
 	radxa-cm5-rpi-cm4-io-raspi-7inch-ts-disp0.dtbo \
 	radxa-cm5-rpi-cm4-io-raspi-7inch-ts-disp1.dtbo \
-	rock-5-itx-enable-emmc.dtbo \
 	rock-5-itx-enable-sharp-lq133t1jw01-edp-lcd-disable-dp0.dtbo \
 	rock-5-itx-enable-sharp-lq133t1jw01-edp-lcd-disable-dp1.dtbo \
 	rock-5-itx-hdmi1-8k.dtbo \
